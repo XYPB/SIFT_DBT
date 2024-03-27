@@ -33,7 +33,9 @@ To pre-process the data and create a training/validation/testing split, you may 
 
 Coming soon...
 
-## Pre-training
+## Reproduce our method
+
+### Pre-training
 To pre-train the model, run the following command for the desired model:
 ```bash
 # ResNet-50
@@ -42,7 +44,7 @@ python main_pretrain.py -b 32 --epochs 4000 --lr 0.015 --sgd --cos --model-type 
 python main_pretrain.py -b 32 --epochs 4000 --lr 0.015 --sgd --cos --model-type simple --cudnn --use-otsu --num-slice 1 --ddp --world-size 4 --save-model --log --log-interval 100 --contrastive --cj-strength 0.2 --inter-slice --inter-view --target-H 448 --target-W 448
 ```
 
-## Disc. Fine-tuning
+### Disc. Fine-tuning
 To fine-tune the pre-trained model as described in the paper, run the following commands:
 ```bash
 # ResNet-50
@@ -53,8 +55,8 @@ python main_cls.py -b 32 --epochs 50 --lr 1e-2 --sgd --cos --binary --model-type
 
 Replace `<pretrained_model_dir>` with the relative path to the pre-trained model. Note that here we only uses a subset of full training set for fine-tuning.
 
-
-## Slice-level Evaluation with multiple patches
+## Evaluation
+### Slice-level Evaluation with multiple patches
 To reproduce the slice-level evaluation metrics, run the following commands:
 ```bash
 # ResNet-50
@@ -66,7 +68,7 @@ python test.py --model-type simple --target-H 448 --target-W 448 --ignore-action
 Replace `<patch_cnt>` with different number of patches to evaluate the prediction performance on the test set.
 
 
-## Volume-level Evaluation
+### Volume-level Evaluation
 
 First, we extract the features with maximum number of patches $n=20$. 
 ```bash

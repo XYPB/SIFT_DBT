@@ -1,4 +1,7 @@
 # SIFT_DBT: Self-supervised Initialization and Fine-Tuning for Imbalanced Digital Breast Tomosynthesis Image Classification
+
+![SIFT-DBT](asset/dbt_method.png)
+
 <h4>
 Yuexi Du, Regina J Hooley, John Lewin, Nicha C. Dvornek
 </br>

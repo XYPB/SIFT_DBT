@@ -29,6 +29,8 @@ We uses BCS-DBT dataset for our experiment. To access the data, you may directly
 
 To pre-process the data and create a training/validation/testing split, you may run `python build_dbt_cls.py`. This will down-sample the original DBT images and crop them with OTSU cut, then save each slice into a individual `.png` file.
 
+We provide the data split files used in our experiment in `data/csv` folder.
+
 ## Pre-trained Model
 
 Coming soon...
